@@ -1,0 +1,583 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const whatsappBase         = "https://wa.me/66886875964";
+const whatsappGeneral      = `${whatsappBase}?text=Hello%2C+I%27m+interested+in+a+restaurant+website+with+Resto+by+Arkadya.`;
+const whatsappPackage      = `${whatsappBase}?text=Hello%2C+I%27d+like+the+3%2C900+THB+restaurant+website.`;
+const whatsappAudit        = `${whatsappBase}?text=Hello%2C+I%27d+like+a+free+audit+of+my+restaurant%27s+digital+presence.`;
+
+const features = [
+  {
+    icon: `<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 14l2 2 4-4"/>`,
+    color: "amber", stroke: "#D4884A", span: "md:col-span-5",
+    en: { title: "Table Booking",         desc: "Guests reserve directly from your site. Every booking confirmed automatically via WhatsApp — no app to install." },
+    fr: { title: "Réservation de tables", desc: "Vos clients réservent directement depuis votre site. Chaque réservation est confirmée automatiquement via WhatsApp." },
+    th: { title: "จองโต๊ะออนไลน์",         desc: "แขกจองจากเว็บไซต์ของคุณโดยตรง ทุกการจองได้รับการยืนยันอัตโนมัติผ่าน WhatsApp" },
+  },
+  {
+    icon: `<path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/>`,
+    color: "orange", stroke: "#E8A060", span: "md:col-span-7",
+    en: { title: "Digital Menu",           desc: "Beautiful photo menu or written items — in English, French, and Thai. Update it anytime without touching any code." },
+    fr: { title: "Menu numérique",         desc: "Menu photo ou texte en anglais, français et thaï. Mettez-le à jour à tout moment, sans toucher au code." },
+    th: { title: "เมนูดิจิทัล",              desc: "เมนูรูปภาพหรือรายการตัวอักษร ทั้งภาษาอังกฤษ ฝรั่งเศส และไทย อัปเดตได้ตลอดเวลาโดยไม่ต้องแตะโค้ด" },
+  },
+  {
+    icon: `<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>`,
+    color: "amber", stroke: "#D4884A", span: "md:col-span-7",
+    en: { title: "Google Maps & SEO",      desc: "Your restaurant appears when guests search nearby. Structured data and local SEO built in from day one." },
+    fr: { title: "Google Maps & SEO",      desc: "Votre restaurant apparaît quand les clients cherchent dans votre quartier. SEO local et données structurées inclus." },
+    th: { title: "Google Maps & SEO",      desc: "ร้านของคุณปรากฏเมื่อแขกค้นหาในพื้นที่ SEO ท้องถิ่นและ structured data รวมอยู่ตั้งแต่วันแรก" },
+  },
+  {
+    icon: `<rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/>`,
+    color: "orange", stroke: "#E8A060", span: "md:col-span-5",
+    en: { title: "Stripe & Thai QR",       desc: "Accept deposits and online payments from guests worldwide — cards, Google Pay, Apple Pay, or PromptPay." },
+    fr: { title: "Stripe & QR Thai",       desc: "Acceptez des acomptes et paiements en ligne de vos clients — cartes, Google Pay, Apple Pay ou PromptPay." },
+    th: { title: "Stripe & Thai QR",       desc: "รับมัดจำและการชำระเงินออนไลน์จากแขกทั่วโลก — บัตร Google Pay Apple Pay หรือ PromptPay" },
+  },
+  {
+    icon: `<rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>`,
+    color: "amber", stroke: "#D4884A", span: "md:col-span-6",
+    en: { title: "Mobile-First Design",    desc: "80% of your guests will discover you on a phone. Every page is built to look perfect on any screen size." },
+    fr: { title: "Design mobile-first",    desc: "80% de vos clients vous découvriront sur un téléphone. Chaque page est optimisée pour tous les écrans." },
+    th: { title: "ออกแบบ Mobile-First",    desc: "80% ของแขกค้นพบคุณบนมือถือ ทุกหน้าสร้างให้สมบูรณ์แบบบนทุกขนาดหน้าจอ" },
+  },
+  {
+    icon: `<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>`,
+    color: "orange", stroke: "#E8A060", span: "md:col-span-6",
+    en: { title: "Live in 10 Days",        desc: "Send us your menu, hours, and photos. We design, build, and launch your restaurant website in 10 business days." },
+    fr: { title: "En ligne en 10 jours",   desc: "Envoyez-nous votre menu, vos horaires et vos photos. Nous concevons et lançons votre site en 10 jours ouvrés." },
+    th: { title: "เปิดตัวใน 10 วัน",        desc: "ส่งเมนู เวลาเปิด-ปิด และรูปถ่ายให้เรา เราออกแบบ สร้าง และเปิดตัวเว็บไซต์ร้านอาหารภายใน 10 วันทำการ" },
+  },
+];
+
+const steps = [
+  {
+    n: "01",
+    en: { title: "Send Us Your Content",    desc: "Share your menu, opening hours, address, and a few photos. That's all we need to start building." },
+    fr: { title: "Envoyez-nous votre contenu", desc: "Partagez votre menu, vos horaires, votre adresse et quelques photos. C'est tout ce qu'il nous faut pour commencer." },
+    th: { title: "ส่งเนื้อหาให้เรา",           desc: "แชร์เมนู เวลาทำการ ที่อยู่ และรูปถ่ายไม่กี่รูป นั่นคือทั้งหมดที่เราต้องการเพื่อเริ่มสร้าง" },
+  },
+  {
+    n: "02",
+    en: { title: "We Build & Launch",       desc: "Your multilingual website goes live in 10 business days — with booking, menu, maps, and WhatsApp fully wired." },
+    fr: { title: "Nous construisons & lançons", desc: "Votre site multilingue est en ligne en 10 jours ouvrés — avec réservations, menu, maps et WhatsApp configurés." },
+    th: { title: "เราสร้างและเปิดตัว",          desc: "เว็บไซต์หลายภาษาของคุณเปิดตัวใน 10 วันทำการ พร้อมการจอง เมนู แผนที่ และ WhatsApp ครบ" },
+  },
+  {
+    n: "03",
+    en: { title: "We Keep It Updated",      desc: "Need to change prices, add a dish, or update hours? Message us on WhatsApp. We handle it the same day." },
+    fr: { title: "Nous maintenons à jour",  desc: "Besoin de changer les prix, ajouter un plat ou modifier les horaires ? Envoyez-nous un message WhatsApp. Fait le jour même." },
+    th: { title: "เราอัปเดตให้คุณ",           desc: "ต้องการเปลี่ยนราคา เพิ่มเมนู หรืออัปเดตเวลาทำการ? ส่งข้อความ WhatsApp ให้เรา เราจัดการให้ในวันเดียวกัน" },
+  },
+];
+
+const packageFeatures = [
+  { en: "Custom restaurant website",          fr: "Site web personnalisé pour votre restaurant",    th: "เว็บไซต์ร้านอาหารแบบกำหนดเอง" },
+  { en: "EN / FR / TH multilingual",          fr: "Multilingue EN / FR / TH",                       th: "หลายภาษา EN / FR / TH" },
+  { en: "Table booking with WhatsApp",         fr: "Réservation de tables + confirmation WhatsApp",  th: "จองโต๊ะพร้อมยืนยัน WhatsApp" },
+  { en: "Digital menu (photos or items)",      fr: "Menu numérique (photos ou liste)",               th: "เมนูดิจิทัล (รูปภาพหรือรายการ)" },
+  { en: "Stripe + PromptPay payments",         fr: "Paiements Stripe + PromptPay",                   th: "การชำระเงิน Stripe + PromptPay" },
+  { en: "Google Maps integration",             fr: "Intégration Google Maps",                        th: "การผสาน Google Maps" },
+  { en: "SEO optimization",                    fr: "Optimisation SEO",                               th: "การปรับแต่ง SEO" },
+  { en: "Mobile-first responsive design",      fr: "Design responsive mobile-first",                 th: "การออกแบบ Mobile-first" },
+  { en: "Launch in 10 business days",          fr: "Lancement en 10 jours ouvrés",                   th: "เปิดตัวใน 10 วันทำการ" },
+  { en: "0% commission on direct bookings",    fr: "0% de commission sur les réservations directes", th: "0% ค่าคอมมิชชั่นสำหรับการจองโดยตรง" },
+];
+---
+
+<BaseLayout>
+
+<!-- ════════════════════════════════════════════════
+     FLOATING NAV
+════════════════════════════════════════════════ -->
+<header class="fixed top-0 inset-x-0 z-50 flex justify-center pt-5 px-4">
+  <nav class="w-full max-w-5xl flex items-center justify-between gap-4 px-5 py-2.5 rounded-full
+              backdrop-blur-xl bg-black/35 border border-white/[0.08]
+              shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
+
+    <a href="/" class="flex items-center gap-1 shrink-0 select-none">
+      <span class="font-display text-cream text-[1.1rem] font-semibold tracking-tight leading-none">
+        <span class="text-amber mr-px opacity-60">/</span>Resto by Arkadya
+      </span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-6">
+      <a href="#features" class="text-cream-dim text-[0.8rem] font-medium hover:text-cream transition-colors duration-300">
+        <span class="lang-en">Features</span><span class="lang-fr">Fonctionnalités</span><span class="lang-th">ฟีเจอร์</span>
+      </a>
+      <a href="#process" class="text-cream-dim text-[0.8rem] font-medium hover:text-cream transition-colors duration-300">
+        <span class="lang-en">How It Works</span><span class="lang-fr">Comment ça marche</span><span class="lang-th">วิธีการทำงาน</span>
+      </a>
+      <a href="#pricing" class="text-cream-dim text-[0.8rem] font-medium hover:text-cream transition-colors duration-300">
+        <span class="lang-en">Pricing</span><span class="lang-fr">Tarifs</span><span class="lang-th">ราคา</span>
+      </a>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <div class="flex items-center gap-0.5 p-0.5 rounded-full border border-white/[0.08]">
+        <button class="lang-btn px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide" data-lang="en">EN</button>
+        <button class="lang-btn px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide" data-lang="fr">FR</button>
+        <button class="lang-btn px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide" data-lang="th">TH</button>
+      </div>
+
+      <a href={whatsappPackage}
+         class="hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-amber text-ember
+                text-[0.8rem] font-semibold group
+                transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
+                hover:bg-amber-light active:scale-[0.97]">
+        <span class="lang-en">Get Started</span><span class="lang-fr">Commencer</span><span class="lang-th">เริ่มต้น</span>
+        <span class="w-5 h-5 rounded-full bg-black/10 flex items-center justify-center
+                     group-hover:translate-x-0.5 group-hover:-translate-y-px
+                     transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 6.5L6.5 1.5M6.5 1.5H2.5M6.5 1.5V5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <button id="menu-toggle" class="md:hidden relative w-9 h-9 flex flex-col items-center justify-center gap-[5px]" aria-label="Toggle navigation">
+        <span id="ham-top" class="w-[18px] h-[1.5px] bg-cream rounded-full block origin-center"></span>
+        <span id="ham-bot" class="w-[18px] h-[1.5px] bg-cream rounded-full block origin-center"></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div id="mobile-menu" class="fixed inset-0 z-40 flex flex-col items-center justify-center gap-9 bg-ember/95 backdrop-blur-3xl">
+  <a href="#features"  class="nav-link font-display text-[2.2rem] text-cream hover:text-amber transition-colors">
+    <span class="lang-en">Features</span><span class="lang-fr">Fonctionnalités</span><span class="lang-th">ฟีเจอร์</span>
+  </a>
+  <a href="#process"   class="nav-link font-display text-[2.2rem] text-cream hover:text-amber transition-colors">
+    <span class="lang-en">How It Works</span><span class="lang-fr">Comment ça marche</span><span class="lang-th">วิธีการทำงาน</span>
+  </a>
+  <a href="#pricing"   class="nav-link font-display text-[2.2rem] text-cream hover:text-amber transition-colors">
+    <span class="lang-en">Pricing</span><span class="lang-fr">Tarifs</span><span class="lang-th">ราคา</span>
+  </a>
+  <a href={whatsappPackage} class="nav-link mt-2 px-8 py-4 rounded-full bg-amber text-ember font-semibold text-lg">
+    <span class="lang-en">Get Started — 3,900 THB</span>
+    <span class="lang-fr">Commencer — 3 900 THB</span>
+    <span class="lang-th">เริ่มต้น — 3,900 บาท</span>
+  </a>
+</div>
+
+
+<!-- ════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════ -->
+<section class="relative min-h-[100dvh] flex items-center pt-28 pb-20 px-4 overflow-hidden">
+
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-amber/[0.04] blur-[130px]"></div>
+    <div class="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] rounded-full bg-orange-900/20 blur-[100px]"></div>
+  </div>
+
+  <div class="relative z-10 max-w-5xl mx-auto w-full space-y-8">
+
+    <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber/25 bg-amber/[0.07]">
+      <span class="w-1.5 h-1.5 rounded-full bg-amber animate-pulse shrink-0"></span>
+      <span class="text-amber text-[10.5px] uppercase tracking-[0.22em] font-semibold">
+        <span class="lang-en">Restaurant Websites · Thailand</span>
+        <span class="lang-fr">Sites web pour restaurants · Thaïlande</span>
+        <span class="lang-th">เว็บไซต์ร้านอาหาร · ประเทศไทย</span>
+      </span>
+    </div>
+
+    <div class="reveal reveal-d1">
+      <h1 class="font-display leading-[1.05] font-semibold text-cream" style="font-size: clamp(2.8rem, 6.5vw, 5.5rem);">
+        <span class="lang-en">Stop Losing Guests<br/><em class="text-amber-gradient not-italic">to Food Apps.</em></span>
+        <span class="lang-fr">Arrêtez de perdre vos clients<br/><em class="text-amber-gradient not-italic">aux apps de livraison.</em></span>
+        <span class="lang-th">หยุดสูญเสียแขก<br/><em class="text-amber-gradient not-italic">ให้กับแอปส่งอาหาร</em></span>
+      </h1>
+    </div>
+
+    <p class="reveal reveal-d2 text-cream-dim text-[1.05rem] leading-relaxed max-w-[32rem]">
+      <span class="lang-en">A beautiful multilingual restaurant website — with table booking, digital menu, and WhatsApp — launched in 10 business days.</span>
+      <span class="lang-fr">Un site web multilingue pour votre restaurant — avec réservation de tables, menu numérique et WhatsApp — lancé en 10 jours ouvrés.</span>
+      <span class="lang-th">เว็บไซต์ร้านอาหารหลายภาษาที่สวยงาม — พร้อมการจองโต๊ะ เมนูดิจิทัล และ WhatsApp — เปิดตัวใน 10 วันทำการ</span>
+    </p>
+
+    <div class="reveal reveal-d3 flex flex-col sm:flex-row gap-3">
+      <a href={whatsappGeneral}
+         class="group flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full
+                bg-amber text-ember font-semibold text-sm
+                transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
+                hover:bg-amber-light active:scale-[0.97]
+                shadow-[0_6px_28px_rgba(212,136,74,0.28)]">
+        <span class="lang-en">Launch Your Restaurant Site</span>
+        <span class="lang-fr">Lancer votre site restaurant</span>
+        <span class="lang-th">เปิดตัวเว็บไซต์ร้านอาหาร</span>
+        <span class="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center
+                     group-hover:translate-x-0.5 group-hover:-translate-y-0.5
+                     transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+      <a href="#features"
+         class="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full
+                border border-white/10 text-cream text-sm font-medium
+                hover:border-amber/30 hover:text-amber transition-all duration-300">
+        <span class="lang-en">See All Features</span>
+        <span class="lang-fr">Voir les fonctionnalités</span>
+        <span class="lang-th">ดูฟีเจอร์ทั้งหมด</span>
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" class="opacity-50 mt-px"><path d="M6.5 1v11M1 6.5l5.5 5.5 5.5-5.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="reveal reveal-d4 flex flex-wrap gap-2 pt-1">
+      <div class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-red-950/35 border border-red-700/20">
+        <span class="text-red-400 text-[11px] font-mono font-bold">−25–35%</span>
+        <span class="text-cream-dim text-[11px]">GrabFood / Foodpanda</span>
+      </div>
+      <div class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-red-950/35 border border-red-700/20">
+        <span class="text-red-400 text-[11px] font-mono font-bold">−20–30%</span>
+        <span class="text-cream-dim text-[11px]">Line Man</span>
+      </div>
+      <div class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-orange-950/40 border border-orange-700/25">
+        <span class="text-orange-400 text-[11px] font-mono font-bold">0%</span>
+        <span class="text-cream-dim text-[11px]">Resto by Arkadya</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-35" aria-hidden="true">
+    <span class="text-cream text-[9px] uppercase tracking-[0.3em]">Scroll</span>
+    <div class="w-px h-9 bg-gradient-to-b from-cream to-transparent"></div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     STATS STRIP
+════════════════════════════════════════════════ -->
+<section class="py-12 border-y border-white/[0.05]">
+  <div class="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div class="reveal text-center">
+      <div class="font-display font-semibold text-cream" style="font-size: clamp(2.2rem, 3.5vw, 2.8rem);">10</div>
+      <div class="text-cream-dim text-[0.78rem] mt-1">
+        <span class="lang-en">Days to launch</span><span class="lang-fr">Jours pour le lancement</span><span class="lang-th">วันในการเปิดตัว</span>
+      </div>
+    </div>
+    <div class="reveal reveal-d1 text-center">
+      <div class="font-display font-semibold text-cream" style="font-size: clamp(2.2rem, 3.5vw, 2.8rem);">3</div>
+      <div class="text-cream-dim text-[0.78rem] mt-1">
+        <span class="lang-en">Languages: EN · FR · TH</span><span class="lang-fr">Langues : EN · FR · TH</span><span class="lang-th">ภาษา: EN · FR · TH</span>
+      </div>
+    </div>
+    <div class="reveal reveal-d2 text-center">
+      <div class="font-display font-semibold text-orange-400" style="font-size: clamp(2.2rem, 3.5vw, 2.8rem);">0%</div>
+      <div class="text-cream-dim text-[0.78rem] mt-1">
+        <span class="lang-en">Commission on bookings</span><span class="lang-fr">Commission sur réservations</span><span class="lang-th">ค่าคอมมิชชั่นการจอง</span>
+      </div>
+    </div>
+    <div class="reveal reveal-d3 text-center">
+      <div class="font-display font-semibold text-cream" style="font-size: clamp(2.2rem, 3.5vw, 2.8rem);">3,900</div>
+      <div class="text-cream-dim text-[0.78rem] mt-1">
+        <span class="lang-en">THB one-time</span><span class="lang-fr">THB paiement unique</span><span class="lang-th">บาท จ่ายครั้งเดียว</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     FEATURES
+════════════════════════════════════════════════ -->
+<section id="features" class="py-36 px-4">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-16 space-y-4">
+      <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber/25 bg-amber/[0.07]">
+        <span class="text-amber text-[10.5px] uppercase tracking-[0.22em] font-semibold">
+          <span class="lang-en">Everything you need</span><span class="lang-fr">Tout ce dont vous avez besoin</span><span class="lang-th">ทุกสิ่งที่คุณต้องการ</span>
+        </span>
+      </div>
+      <h2 class="reveal reveal-d1 font-display font-semibold text-cream leading-tight" style="font-size: clamp(2rem, 4.5vw, 3.4rem);">
+        <span class="lang-en">Built for Restaurants<br/><em class="text-amber-gradient not-italic">in Thailand</em></span>
+        <span class="lang-fr">Conçu pour les restaurants<br/><em class="text-amber-gradient not-italic">en Thaïlande</em></span>
+        <span class="lang-th">สร้างสำหรับร้านอาหาร<br/><em class="text-amber-gradient not-italic">ในประเทศไทย</em></span>
+      </h2>
+      <p class="reveal reveal-d2 text-cream-dim text-[1.02rem] max-w-md mx-auto">
+        <span class="lang-en">Every tool your restaurant needs to attract guests directly — and keep all the revenue.</span>
+        <span class="lang-fr">Tous les outils dont votre restaurant a besoin pour attirer des clients directement et garder tous les revenus.</span>
+        <span class="lang-th">ทุกเครื่องมือที่ร้านอาหารของคุณต้องการเพื่อดึงดูดแขกโดยตรง และรักษารายได้ทั้งหมด</span>
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+      {features.map((f, i) => (
+        <div class={`reveal reveal-d${Math.min(i + 1, 6)} ${f.span} p-[6px] rounded-[2rem] bg-white/[0.025] ring-1 ring-white/[0.07]`}>
+          <div class="rounded-[calc(2rem-6px)] bg-card p-7 h-full flex flex-col justify-between min-h-[200px] shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+            <div class={`w-11 h-11 rounded-2xl bg-${f.color}-900/40 border border-${f.color}-700/30 flex items-center justify-center mb-5`}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={f.stroke} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" set:html={f.icon}/>
+            </div>
+            <div>
+              <h3 class="font-display text-[1.35rem] font-semibold text-cream mb-2">
+                <span class="lang-en">{f.en.title}</span>
+                <span class="lang-fr">{f.fr.title}</span>
+                <span class="lang-th">{f.th.title}</span>
+              </h3>
+              <p class="text-cream-dim text-sm leading-relaxed">
+                <span class="lang-en">{f.en.desc}</span>
+                <span class="lang-fr">{f.fr.desc}</span>
+                <span class="lang-th">{f.th.desc}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     HOW IT WORKS
+════════════════════════════════════════════════ -->
+<section id="process" class="py-36 px-4" style="background: linear-gradient(180deg, transparent 0%, rgba(28,20,16,0.5) 50%, transparent 100%);">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-16 space-y-4">
+      <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber/25 bg-amber/[0.07]">
+        <span class="text-amber text-[10.5px] uppercase tracking-[0.22em] font-semibold">
+          <span class="lang-en">Simple Process</span><span class="lang-fr">Processus simple</span><span class="lang-th">กระบวนการง่ายๆ</span>
+        </span>
+      </div>
+      <h2 class="reveal reveal-d1 font-display font-semibold text-cream leading-tight" style="font-size: clamp(2rem, 4vw, 3rem);">
+        <span class="lang-en">From Menu to Live Website<br/><em class="text-amber-gradient not-italic">in 10 Days</em></span>
+        <span class="lang-fr">Du menu au site en ligne<br/><em class="text-amber-gradient not-italic">en 10 jours</em></span>
+        <span class="lang-th">จากเมนูสู่เว็บไซต์สดใหม่<br/><em class="text-amber-gradient not-italic">ใน 10 วัน</em></span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      {steps.map((s, i) => (
+        <div class={`reveal reveal-d${i + 1} p-[6px] rounded-[2rem] bg-white/[0.025] ring-1 ring-white/[0.07]`}>
+          <div class="rounded-[calc(2rem-6px)] bg-card p-8 h-full shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+            <div class="font-display text-[3.5rem] font-semibold text-amber/20 mb-4 leading-none">{s.n}</div>
+            <h3 class="font-display text-[1.25rem] font-semibold text-cream mb-3">
+              <span class="lang-en">{s.en.title}</span>
+              <span class="lang-fr">{s.fr.title}</span>
+              <span class="lang-th">{s.th.title}</span>
+            </h3>
+            <p class="text-cream-dim text-sm leading-relaxed">
+              <span class="lang-en">{s.en.desc}</span>
+              <span class="lang-fr">{s.fr.desc}</span>
+              <span class="lang-th">{s.th.desc}</span>
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     PRICING
+════════════════════════════════════════════════ -->
+<section id="pricing" class="py-36 px-4">
+  <div class="max-w-2xl mx-auto">
+
+    <div class="text-center mb-14 space-y-4">
+      <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber/25 bg-amber/[0.07]">
+        <span class="text-amber text-[10.5px] uppercase tracking-[0.22em] font-semibold">
+          <span class="lang-en">Transparent Pricing</span><span class="lang-fr">Tarification transparente</span><span class="lang-th">ราคาโปร่งใส</span>
+        </span>
+      </div>
+      <h2 class="reveal reveal-d1 font-display font-semibold text-cream" style="font-size: clamp(2rem, 4vw, 3rem);">
+        <span class="lang-en">One Price.<br/><em class="text-amber-gradient not-italic">Everything Included.</em></span>
+        <span class="lang-fr">Un seul tarif.<br/><em class="text-amber-gradient not-italic">Tout inclus.</em></span>
+        <span class="lang-th">ราคาเดียว<br/><em class="text-amber-gradient not-italic">รวมทุกอย่าง</em></span>
+      </h2>
+    </div>
+
+    <div class="reveal relative p-2 rounded-[2rem] bg-amber/[0.1] ring-1 ring-amber/30">
+      <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10 px-4 py-1 rounded-full bg-amber text-ember text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">
+        <span class="lang-en">One-Time Setup</span><span class="lang-fr">Installation unique</span><span class="lang-th">ตั้งค่าครั้งเดียว</span>
+      </div>
+      <div class="rounded-[calc(2rem-0.5rem)] bg-card-2 p-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.07)]">
+        <div class="mb-8">
+          <div class="flex items-end gap-2 mb-2">
+            <span class="font-display font-semibold text-cream" style="font-size: 4rem; line-height: 1;">3,900</span>
+            <span class="text-cream font-medium mb-2">THB</span>
+          </div>
+          <div class="text-muted text-xs line-through">
+            <span class="lang-en">Regular price: 6,000 THB</span>
+            <span class="lang-fr">Prix normal : 6 000 THB</span>
+            <span class="lang-th">ราคาปกติ: 6,000 บาท</span>
+          </div>
+        </div>
+
+        <ul class="space-y-3 mb-10">
+          {packageFeatures.map(item => (
+            <li class="flex items-center gap-3 text-cream-dim text-sm">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" class="shrink-0">
+                <circle cx="7.5" cy="7.5" r="6.5" stroke="#D4884A" stroke-width="1"/>
+                <path d="M4.75 7.5l2.25 2.25L10.25 5.5" stroke="#D4884A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="lang-en">{item.en}</span>
+              <span class="lang-fr">{item.fr}</span>
+              <span class="lang-th">{item.th}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a href={whatsappPackage}
+           class="w-full flex items-center justify-center gap-2.5 px-5 py-4 rounded-full
+                  bg-amber text-ember font-semibold text-sm
+                  group transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
+                  hover:bg-amber-light active:scale-[0.97]">
+          <span class="lang-en">Start Today via WhatsApp</span>
+          <span class="lang-fr">Commencer via WhatsApp</span>
+          <span class="lang-th">เริ่มต้นผ่าน WhatsApp</span>
+          <span class="w-7 h-7 rounded-full bg-black/10 flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-500">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal mt-10 text-center">
+      <a href={whatsappAudit}
+         class="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full
+                border border-amber/30 bg-amber/[0.06] text-cream font-medium text-[0.9rem]
+                transition-all duration-500 hover:bg-amber/12 hover:border-amber/50 active:scale-[0.97]">
+        <span class="lang-en">Free audit of your current digital presence</span>
+        <span class="lang-fr">Audit gratuit de votre présence digitale actuelle</span>
+        <span class="lang-th">ตรวจสอบสถานะดิจิทัลของคุณฟรี</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     FINAL CTA
+════════════════════════════════════════════════ -->
+<section class="py-36 px-4">
+  <div class="max-w-3xl mx-auto">
+    <div class="reveal p-2 rounded-[2.5rem] bg-amber/[0.07] ring-1 ring-amber/20">
+      <div class="rounded-[calc(2.5rem-0.5rem)] bg-card-2 px-10 py-16 md:px-16 md:py-20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] text-center">
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber/25 bg-amber/[0.07]">
+            <span class="text-amber text-[10.5px] uppercase tracking-[0.22em] font-semibold">
+              <span class="lang-en">Get started today</span><span class="lang-fr">Commencez aujourd'hui</span><span class="lang-th">เริ่มต้นวันนี้</span>
+            </span>
+          </div>
+
+          <h2 class="font-display font-semibold text-cream leading-tight" style="font-size: clamp(2rem, 5vw, 3.4rem);">
+            <span class="lang-en">Your Restaurant Deserves<br/><em class="text-amber-gradient not-italic">Its Own Website</em></span>
+            <span class="lang-fr">Votre restaurant mérite<br/><em class="text-amber-gradient not-italic">son propre site web</em></span>
+            <span class="lang-th">ร้านอาหารของคุณสมควรได้<br/><em class="text-amber-gradient not-italic">เว็บไซต์ของตัวเอง</em></span>
+          </h2>
+
+          <p class="text-cream-dim text-[1.02rem] max-w-md mx-auto">
+            <span class="lang-en">Stop sharing your guests' data with delivery apps. Own your bookings, your menu, and your relationship with every guest.</span>
+            <span class="lang-fr">Arrêtez de partager les données de vos clients avec les apps de livraison. Maîtrisez vos réservations, votre menu et votre relation client.</span>
+            <span class="lang-th">หยุดแบ่งปันข้อมูลแขกกับแอปส่งอาหาร เป็นเจ้าของการจอง เมนู และความสัมพันธ์กับแขกทุกคนของคุณ</span>
+          </p>
+
+          <div class="pt-2">
+            <a href={whatsappGeneral}
+               class="group inline-flex items-center gap-3 px-8 py-4 rounded-full
+                      bg-amber text-ember font-semibold text-base
+                      transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
+                      hover:bg-amber-light active:scale-[0.97]
+                      shadow-[0_10px_36px_rgba(212,136,74,0.32)]">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" class="shrink-0">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              <span class="lang-en">Chat on WhatsApp</span>
+              <span class="lang-fr">Discuter sur WhatsApp</span>
+              <span class="lang-th">แชทบน WhatsApp</span>
+            </a>
+          </div>
+
+          <p class="text-muted text-xs">
+            <span class="lang-en">We typically respond within a few hours · Thai, English & French spoken</span>
+            <span class="lang-fr">Nous répondons généralement en quelques heures · Thaï, anglais et français parlés</span>
+            <span class="lang-th">เราตอบกลับภายในไม่กี่ชั่วโมง · พูดภาษาไทย อังกฤษ และฝรั่งเศส</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer class="border-t border-white/[0.05] py-10 px-4">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <a href="/" class="font-display text-[1.1rem] text-cream select-none">
+      <span class="text-amber opacity-60">/</span>Resto by Arkadya
+    </a>
+    <div class="flex flex-wrap items-center justify-center gap-6 text-cream-dim text-sm">
+      <a href="#features" class="hover:text-cream transition-colors duration-200">
+        <span class="lang-en">Features</span><span class="lang-fr">Fonctionnalités</span><span class="lang-th">ฟีเจอร์</span>
+      </a>
+      <a href="#process" class="hover:text-cream transition-colors duration-200">
+        <span class="lang-en">How It Works</span><span class="lang-fr">Comment ça marche</span><span class="lang-th">วิธีการทำงาน</span>
+      </a>
+      <a href="#pricing" class="hover:text-cream transition-colors duration-200">
+        <span class="lang-en">Pricing</span><span class="lang-fr">Tarifs</span><span class="lang-th">ราคา</span>
+      </a>
+      <a href="mailto:hello@arkadya.tech" class="hover:text-cream transition-colors duration-200">hello@arkadya.tech</a>
+      <a href="https://arkadya.tech" target="_blank" rel="noopener" class="hover:text-cream transition-colors duration-200">arkadya.tech</a>
+    </div>
+    <p class="text-muted text-xs text-center">
+      © 2026 Resto by Arkadya ·
+      <span class="lang-en">Restaurant websites, Thailand</span>
+      <span class="lang-fr">Sites web restaurant, Thaïlande</span>
+      <span class="lang-th">เว็บไซต์ร้านอาหาร ประเทศไทย</span>
+    </p>
+  </div>
+</footer>
+
+
+<!-- ════════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════════ -->
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); } }),
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
+  document.querySelectorAll<HTMLElement>('.reveal').forEach(el => observer.observe(el));
+
+  function setLang(lang: string) {
+    const html = document.documentElement;
+    html.classList.remove('is-fr', 'is-th');
+    if (lang === 'fr' || lang === 'th') html.classList.add(`is-${lang}`);
+    html.setAttribute('lang', lang);
+    document.querySelectorAll<HTMLElement>('.lang-btn').forEach(btn => {
+      btn.classList.toggle('is-active', (btn as HTMLButtonElement & {dataset: {lang: string}}).dataset.lang === lang);
+    });
+    localStorage.setItem('lang', lang);
+  }
+  setLang(localStorage.getItem('lang') || 'en');
+  document.querySelectorAll<HTMLButtonElement>('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang ?? 'en'));
+  });
+
+  const toggle = document.getElementById('menu-toggle');
+  const menu   = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('menu-open');
+    toggle.classList.toggle('menu-is-open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  menu?.querySelectorAll<HTMLAnchorElement>('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('menu-open');
+      toggle?.classList.remove('menu-is-open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+
+</BaseLayout>
