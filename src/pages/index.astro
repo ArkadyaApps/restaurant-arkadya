@@ -29,11 +29,11 @@ const features = [
     th: { title: "Google Maps & SEO",      desc: "ร้านของคุณปรากฏเมื่อแขกค้นหาในพื้นที่ SEO ท้องถิ่นและ structured data รวมอยู่ตั้งแต่วันแรก" },
   },
   {
-    icon: `<rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/>`,
+    icon: `<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>`,
     color: "orange", stroke: "#E8A060", span: "md:col-span-5",
-    en: { title: "Stripe & Thai QR",       desc: "Accept deposits and online payments from guests worldwide — cards, Google Pay, Apple Pay, or PromptPay." },
-    fr: { title: "Stripe & QR Thai",       desc: "Acceptez des acomptes et paiements en ligne de vos clients — cartes, Google Pay, Apple Pay ou PromptPay." },
-    th: { title: "Stripe & Thai QR",       desc: "รับมัดจำและการชำระเงินออนไลน์จากแขกทั่วโลก — บัตร Google Pay Apple Pay หรือ PromptPay" },
+    en: { title: "More Visibility",        desc: "Customers find you on Google, browse your menu, and book directly — without any delivery platform in the way." },
+    fr: { title: "Plus de visibilité",     desc: "Les clients vous trouvent sur Google, parcourent votre menu et réservent directement — sans intermédiaire." },
+    th: { title: "เพิ่มการมองเห็น",         desc: "ลูกค้าค้นพบคุณบน Google ดูเมนู และจองตรงโดยไม่มีแพลตฟอร์มอื่นมาขวางกลาง" },
   },
   {
     icon: `<rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>`,
@@ -45,9 +45,9 @@ const features = [
   {
     icon: `<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>`,
     color: "orange", stroke: "#E8A060", span: "md:col-span-6",
-    en: { title: "Live in 10 Days",        desc: "Send us your menu, hours, and photos. We design, build, and launch your restaurant website in 10 business days." },
-    fr: { title: "En ligne en 10 jours",   desc: "Envoyez-nous votre menu, vos horaires et vos photos. Nous concevons et lançons votre site en 10 jours ouvrés." },
-    th: { title: "เปิดตัวใน 10 วัน",        desc: "ส่งเมนู เวลาเปิด-ปิด และรูปถ่ายให้เรา เราออกแบบ สร้าง และเปิดตัวเว็บไซต์ร้านอาหารภายใน 10 วันทำการ" },
+    en: { title: "Live in 2 Days",          desc: "Send us your menu, hours, and photos. We design, build, and launch your restaurant website in just 2 days." },
+    fr: { title: "En ligne en 2 jours",    desc: "Envoyez-nous votre menu, vos horaires et vos photos. Nous concevons et lançons votre site en seulement 2 jours." },
+    th: { title: "เปิดตัวใน 2 วัน",          desc: "ส่งเมนู เวลาเปิด-ปิด และรูปถ่ายให้เรา เราออกแบบ สร้าง และเปิดตัวเว็บไซต์ร้านอาหารภายใน 2 วัน" },
   },
 ];
 
@@ -60,9 +60,9 @@ const steps = [
   },
   {
     n: "02",
-    en: { title: "We Build & Launch",       desc: "Your multilingual website goes live in 10 business days — with booking, menu, maps, and WhatsApp fully wired." },
-    fr: { title: "Nous construisons & lançons", desc: "Votre site multilingue est en ligne en 10 jours ouvrés — avec réservations, menu, maps et WhatsApp configurés." },
-    th: { title: "เราสร้างและเปิดตัว",          desc: "เว็บไซต์หลายภาษาของคุณเปิดตัวใน 10 วันทำการ พร้อมการจอง เมนู แผนที่ และ WhatsApp ครบ" },
+    en: { title: "We Build & Launch",       desc: "Your multilingual website goes live in 2 days — with booking, menu, maps, and WhatsApp fully wired." },
+    fr: { title: "Nous construisons & lançons", desc: "Votre site multilingue est en ligne en 2 jours — avec réservations, menu, maps et WhatsApp configurés." },
+    th: { title: "เราสร้างและเปิดตัว",          desc: "เว็บไซต์หลายภาษาของคุณเปิดตัวใน 2 วัน พร้อมการจอง เมนู แผนที่ และ WhatsApp ครบ" },
   },
   {
     n: "03",
@@ -77,11 +77,9 @@ const packageFeatures = [
   { en: "EN / FR / TH multilingual",          fr: "Multilingue EN / FR / TH",                       th: "หลายภาษา EN / FR / TH" },
   { en: "Table booking with WhatsApp",         fr: "Réservation de tables + confirmation WhatsApp",  th: "จองโต๊ะพร้อมยืนยัน WhatsApp" },
   { en: "Digital menu (photos or items)",      fr: "Menu numérique (photos ou liste)",               th: "เมนูดิจิทัล (รูปภาพหรือรายการ)" },
-  { en: "Stripe + PromptPay payments",         fr: "Paiements Stripe + PromptPay",                   th: "การชำระเงิน Stripe + PromptPay" },
-  { en: "Google Maps integration",             fr: "Intégration Google Maps",                        th: "การผสาน Google Maps" },
-  { en: "SEO optimization",                    fr: "Optimisation SEO",                               th: "การปรับแต่ง SEO" },
+  { en: "Google Maps & SEO — get found locally", fr: "Google Maps & SEO — visible localement",        th: "Google Maps & SEO — ให้ลูกค้าค้นพบคุณ" },
   { en: "Mobile-first responsive design",      fr: "Design responsive mobile-first",                 th: "การออกแบบ Mobile-first" },
-  { en: "Launch in 10 business days",          fr: "Lancement en 10 jours ouvrés",                   th: "เปิดตัวใน 10 วันทำการ" },
+  { en: "Launch in 2 days",                    fr: "Lancement en 2 jours",                           th: "เปิดตัวใน 2 วัน" },
   { en: "0% commission on direct bookings",    fr: "0% de commission sur les réservations directes", th: "0% ค่าคอมมิชชั่นสำหรับการจองโดยตรง" },
 ];
 ---
@@ -190,9 +188,9 @@ const packageFeatures = [
     </div>
 
     <p class="reveal reveal-d2 text-cream-dim text-[1.05rem] leading-relaxed max-w-[32rem]">
-      <span class="lang-en">A beautiful multilingual restaurant website — with table booking, digital menu, and WhatsApp — launched in 10 business days.</span>
-      <span class="lang-fr">Un site web multilingue pour votre restaurant — avec réservation de tables, menu numérique et WhatsApp — lancé en 10 jours ouvrés.</span>
-      <span class="lang-th">เว็บไซต์ร้านอาหารหลายภาษาที่สวยงาม — พร้อมการจองโต๊ะ เมนูดิจิทัล และ WhatsApp — เปิดตัวใน 10 วันทำการ</span>
+      <span class="lang-en">A beautiful multilingual restaurant website — with table booking, digital menu, and WhatsApp — launched in 2 days.</span>
+      <span class="lang-fr">Un site web multilingue pour votre restaurant — avec réservation de tables, menu numérique et WhatsApp — lancé en 2 jours.</span>
+      <span class="lang-th">เว็บไซต์ร้านอาหารหลายภาษาที่สวยงาม — พร้อมการจองโต๊ะ เมนูดิจิทัล และ WhatsApp — เปิดตัวใน 2 วัน</span>
     </p>
 
     <div class="reveal reveal-d3 flex flex-col sm:flex-row gap-3">
@@ -252,7 +250,7 @@ const packageFeatures = [
 <section class="py-12 border-y border-white/[0.05]">
   <div class="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
     <div class="reveal text-center">
-      <div class="font-display font-semibold text-cream" style="font-size: clamp(2.2rem, 3.5vw, 2.8rem);">10</div>
+      <div class="font-display font-semibold text-cream" style="font-size: clamp(2.2rem, 3.5vw, 2.8rem);">2</div>
       <div class="text-cream-dim text-[0.78rem] mt-1">
         <span class="lang-en">Days to launch</span><span class="lang-fr">Jours pour le lancement</span><span class="lang-th">วันในการเปิดตัว</span>
       </div>
@@ -332,6 +330,113 @@ const packageFeatures = [
 
 
 <!-- ════════════════════════════════════════════════
+     EXAMPLES
+════════════════════════════════════════════════ -->
+<section id="examples" class="py-24 px-4">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-14 space-y-4">
+      <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber/25 bg-amber/[0.07]">
+        <span class="text-amber text-[10.5px] uppercase tracking-[0.22em] font-semibold">
+          <span class="lang-en">Real restaurants, built with Resto</span>
+          <span class="lang-fr">Vrais restaurants, créés avec Resto</span>
+          <span class="lang-th">ร้านอาหารจริง สร้างด้วย Resto</span>
+        </span>
+      </div>
+      <h2 class="reveal reveal-d1 font-display font-semibold text-cream leading-tight" style="font-size: clamp(2rem, 4.5vw, 3.4rem);">
+        <span class="lang-en">See What We Build<br/><em class="text-amber-gradient not-italic">for Your Restaurant</em></span>
+        <span class="lang-fr">Voyez ce que nous créons<br/><em class="text-amber-gradient not-italic">pour votre restaurant</em></span>
+        <span class="lang-th">ดูสิ่งที่เราสร้าง<br/><em class="text-amber-gradient not-italic">สำหรับร้านอาหารของคุณ</em></span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <a href="https://food.arkadya.tech" target="_blank" rel="noopener noreferrer"
+         class="reveal group block p-[6px] rounded-[2rem] bg-white/[0.025] ring-1 ring-white/[0.07] hover:ring-amber/30 transition-all duration-300">
+        <div class="rounded-[calc(2rem-6px)] overflow-hidden bg-card relative aspect-[4/5]">
+          <img src="/examples/resto-1.jpg" alt="Restaurant example 1"
+               class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="hidden w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-amber/10 to-orange-900/20">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4884A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+            <span class="text-amber/60 text-xs uppercase tracking-widest">Example Restaurant</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/70 to-transparent">
+            <span class="text-cream text-sm font-semibold">
+              <span class="lang-en">View example ↗</span>
+              <span class="lang-fr">Voir l'exemple ↗</span>
+              <span class="lang-th">ดูตัวอย่าง ↗</span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://food.arkadya.tech" target="_blank" rel="noopener noreferrer"
+         class="reveal reveal-d1 group block p-[6px] rounded-[2rem] bg-white/[0.025] ring-1 ring-white/[0.07] hover:ring-amber/30 transition-all duration-300">
+        <div class="rounded-[calc(2rem-6px)] overflow-hidden bg-card relative aspect-[4/5]">
+          <img src="/examples/resto-2.jpg" alt="Restaurant example 2"
+               class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="hidden w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-orange-900/20 to-amber/10">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4884A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/>
+            </svg>
+            <span class="text-amber/60 text-xs uppercase tracking-widest">Example Restaurant</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/70 to-transparent">
+            <span class="text-cream text-sm font-semibold">
+              <span class="lang-en">View example ↗</span>
+              <span class="lang-fr">Voir l'exemple ↗</span>
+              <span class="lang-th">ดูตัวอย่าง ↗</span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://food.arkadya.tech" target="_blank" rel="noopener noreferrer"
+         class="reveal reveal-d2 group block p-[6px] rounded-[2rem] bg-white/[0.025] ring-1 ring-white/[0.07] hover:ring-amber/30 transition-all duration-300">
+        <div class="rounded-[calc(2rem-6px)] overflow-hidden bg-card relative aspect-[4/5]">
+          <img src="/examples/resto-3.jpg" alt="Restaurant example 3"
+               class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="hidden w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-amber/10 to-orange-950/40">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4884A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span class="text-amber/60 text-xs uppercase tracking-widest">Example Restaurant</span>
+          </div>
+          <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/70 to-transparent">
+            <span class="text-cream text-sm font-semibold">
+              <span class="lang-en">View example ↗</span>
+              <span class="lang-fr">Voir l'exemple ↗</span>
+              <span class="lang-th">ดูตัวอย่าง ↗</span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="reveal mt-10 text-center">
+      <a href="https://food.arkadya.tech" target="_blank" rel="noopener noreferrer"
+         class="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full
+                border border-amber/30 bg-amber/[0.06] text-cream font-medium text-[0.9rem]
+                transition-all duration-500 hover:bg-amber/12 hover:border-amber/50 active:scale-[0.97]">
+        <span class="lang-en">Build your restaurant site — free preview</span>
+        <span class="lang-fr">Créez votre site restaurant — aperçu gratuit</span>
+        <span class="lang-th">สร้างเว็บไซต์ร้านอาหารของคุณ — ดูตัวอย่างฟรี</span>
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" class="opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-300"><path d="M2 11L11 2M11 2H4M11 2V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
      HOW IT WORKS
 ════════════════════════════════════════════════ -->
 <section id="process" class="py-36 px-4" style="background: linear-gradient(180deg, transparent 0%, rgba(28,20,16,0.5) 50%, transparent 100%);">
@@ -344,9 +449,9 @@ const packageFeatures = [
         </span>
       </div>
       <h2 class="reveal reveal-d1 font-display font-semibold text-cream leading-tight" style="font-size: clamp(2rem, 4vw, 3rem);">
-        <span class="lang-en">From Menu to Live Website<br/><em class="text-amber-gradient not-italic">in 10 Days</em></span>
-        <span class="lang-fr">Du menu au site en ligne<br/><em class="text-amber-gradient not-italic">en 10 jours</em></span>
-        <span class="lang-th">จากเมนูสู่เว็บไซต์สดใหม่<br/><em class="text-amber-gradient not-italic">ใน 10 วัน</em></span>
+        <span class="lang-en">From Menu to Live Website<br/><em class="text-amber-gradient not-italic">in 2 Days</em></span>
+        <span class="lang-fr">Du menu au site en ligne<br/><em class="text-amber-gradient not-italic">en 2 jours</em></span>
+        <span class="lang-th">จากเมนูสู่เว็บไซต์สดใหม่<br/><em class="text-amber-gradient not-italic">ใน 2 วัน</em></span>
       </h2>
     </div>
 
