@@ -352,19 +352,67 @@ const packageFeatures = [
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
+      <!-- MOCKUP 1 — Dark Thai restaurant -->
       <a href="https://food.arkadya.tech" target="_blank" rel="noopener noreferrer"
          class="reveal group block p-[6px] rounded-[2rem] bg-white/[0.025] ring-1 ring-white/[0.07] hover:ring-amber/30 transition-all duration-300">
-        <div class="rounded-[calc(2rem-6px)] overflow-hidden bg-card relative aspect-[4/5]">
-          <img src="/examples/resto-1.jpg" alt="Restaurant example 1"
-               class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="hidden w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-amber/10 to-orange-900/20">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4884A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-            </svg>
-            <span class="text-amber/60 text-xs uppercase tracking-widest">Example Restaurant</span>
+        <div class="rounded-[calc(2rem-6px)] overflow-hidden relative aspect-[4/5]">
+          <div class="absolute inset-0 flex flex-col bg-[#16100a] transition-transform duration-500 group-hover:scale-[1.03]">
+            <!-- nav -->
+            <div class="flex items-center justify-between px-4 py-3 border-b border-white/[0.05]">
+              <span class="text-[9.5px] font-semibold tracking-wide" style="color:#D4884A;">Sawasdee Garden</span>
+              <div class="flex gap-3">
+                <span class="text-[7px] text-white/25">Menu</span>
+                <span class="text-[7px] text-white/25">Book</span>
+              </div>
+            </div>
+            <!-- hero -->
+            <div class="flex-1 px-4 pt-5 pb-3 relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-28 h-28 rounded-full blur-3xl" style="background:rgba(212,136,74,0.12);"></div>
+              <div class="text-[7px] uppercase tracking-[0.22em] mb-2.5" style="color:rgba(212,136,74,0.55);">Thai Restaurant · Chiang Mai</div>
+              <div class="font-semibold leading-[1.1] mb-4 text-white" style="font-size:21px;">Authentic<br/>Thai Cuisine</div>
+              <div class="inline-flex items-center px-3 py-1.5 rounded-full text-[8px] font-bold" style="background:#D4884A;color:#16100a;">Book a Table →</div>
+              <!-- fake tag row -->
+              <div class="flex gap-1.5 mt-4 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full text-[6.5px]" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.35);">Breakfast</span>
+                <span class="px-2 py-0.5 rounded-full text-[6.5px]" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.35);">Lunch</span>
+                <span class="px-2 py-0.5 rounded-full text-[6.5px]" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.35);">Dinner</span>
+              </div>
+            </div>
+            <!-- menu strip -->
+            <div class="px-4 py-3 border-t border-white/[0.05]">
+              <div class="text-[6.5px] uppercase tracking-widest mb-2.5" style="color:rgba(255,255,255,0.2);">Our Menu</div>
+              <div class="space-y-2">
+                <div class="flex justify-between items-center">
+                  <span class="text-[8px]" style="color:rgba(255,255,255,0.55);">Pad Thai Goong</span>
+                  <span class="text-[8px]" style="color:rgba(212,136,74,0.8);">฿180</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-[8px]" style="color:rgba(255,255,255,0.55);">Tom Yum Soup</span>
+                  <span class="text-[8px]" style="color:rgba(212,136,74,0.8);">฿150</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-[8px]" style="color:rgba(255,255,255,0.55);">Green Curry</span>
+                  <span class="text-[8px]" style="color:rgba(212,136,74,0.8);">฿160</span>
+                </div>
+              </div>
+            </div>
+            <!-- stats bar -->
+            <div class="grid grid-cols-3 border-t border-white/[0.05]">
+              <div class="py-2.5 text-center border-r border-white/[0.05]">
+                <div class="text-[12px] font-bold text-white">2</div>
+                <div class="text-[6px]" style="color:rgba(255,255,255,0.2);">Days</div>
+              </div>
+              <div class="py-2.5 text-center border-r border-white/[0.05]">
+                <div class="text-[12px] font-bold" style="color:#f97316;">0%</div>
+                <div class="text-[6px]" style="color:rgba(255,255,255,0.2);">Commission</div>
+              </div>
+              <div class="py-2.5 text-center">
+                <div class="text-[12px] font-bold text-white">3</div>
+                <div class="text-[6px]" style="color:rgba(255,255,255,0.2);">Languages</div>
+              </div>
+            </div>
           </div>
-          <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/70 to-transparent">
+          <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/75 to-transparent">
             <span class="text-cream text-sm font-semibold">
               <span class="lang-en">View example ↗</span>
               <span class="lang-fr">Voir l'exemple ↗</span>
@@ -374,19 +422,50 @@ const packageFeatures = [
         </div>
       </a>
 
+      <!-- MOCKUP 2 — Light French bistro -->
       <a href="https://food.arkadya.tech" target="_blank" rel="noopener noreferrer"
          class="reveal reveal-d1 group block p-[6px] rounded-[2rem] bg-white/[0.025] ring-1 ring-white/[0.07] hover:ring-amber/30 transition-all duration-300">
-        <div class="rounded-[calc(2rem-6px)] overflow-hidden bg-card relative aspect-[4/5]">
-          <img src="/examples/resto-2.jpg" alt="Restaurant example 2"
-               class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="hidden w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-orange-900/20 to-amber/10">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4884A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/>
-            </svg>
-            <span class="text-amber/60 text-xs uppercase tracking-widest">Example Restaurant</span>
+        <div class="rounded-[calc(2rem-6px)] overflow-hidden relative aspect-[4/5]">
+          <div class="absolute inset-0 flex flex-col transition-transform duration-500 group-hover:scale-[1.03]" style="background:#faf8f4;">
+            <!-- nav -->
+            <div class="flex items-center justify-between px-4 py-3" style="border-bottom:1px solid rgba(0,0,0,0.06);">
+              <span class="text-[9.5px] font-semibold tracking-wide" style="color:#1a1208;">Le Jardin</span>
+              <div class="flex items-center px-2.5 py-1 rounded-full" style="background:#1a1208;">
+                <span class="text-[7px] font-medium text-white">Réserver</span>
+              </div>
+            </div>
+            <!-- hero area -->
+            <div class="flex-1 px-4 pt-5 pb-3" style="background:linear-gradient(to bottom,rgba(251,231,204,0.55),transparent);">
+              <div class="text-[7px] uppercase tracking-[0.22em] mb-2" style="color:rgba(146,64,14,0.5);">Bistro Français · Phuket</div>
+              <div class="font-semibold leading-[1.1] mb-3" style="font-size:21px;color:#1a1208;">Cuisine<br/>Française</div>
+              <div class="text-[8px] mb-4" style="color:rgba(26,18,8,0.38);">Fine dining in the heart of Thailand</div>
+              <div class="flex gap-1.5">
+                <span class="px-2.5 py-1 rounded-full text-[7px] font-semibold text-white" style="background:#1a1208;">Déjeuner</span>
+                <span class="px-2.5 py-1 rounded-full text-[7px]" style="background:rgba(26,18,8,0.07);color:rgba(26,18,8,0.45);">Dîner</span>
+              </div>
+            </div>
+            <!-- menu cards -->
+            <div class="px-3 py-3" style="border-top:1px solid rgba(0,0,0,0.05);">
+              <div class="text-[6.5px] uppercase tracking-widest mb-2" style="color:rgba(0,0,0,0.2);">Menu du Jour</div>
+              <div class="grid grid-cols-2 gap-1.5">
+                <div class="p-2 rounded-xl" style="background:rgba(26,18,8,0.04);">
+                  <div class="text-[8px] font-semibold mb-0.5" style="color:#1a1208;">Crêpes Suzette</div>
+                  <div class="text-[7px]" style="color:rgba(26,18,8,0.38);">฿280</div>
+                </div>
+                <div class="p-2 rounded-xl" style="background:rgba(26,18,8,0.04);">
+                  <div class="text-[8px] font-semibold mb-0.5" style="color:#1a1208;">Boeuf Bourguignon</div>
+                  <div class="text-[7px]" style="color:rgba(26,18,8,0.38);">฿420</div>
+                </div>
+              </div>
+            </div>
+            <!-- lang toggle -->
+            <div class="px-4 py-2 flex items-center gap-1.5" style="border-top:1px solid rgba(0,0,0,0.05);">
+              <span class="px-2 py-0.5 rounded-full text-[7px] font-bold text-white" style="background:#1a1208;">FR</span>
+              <span class="px-2 py-0.5 text-[7px]" style="color:rgba(26,18,8,0.28);">EN</span>
+              <span class="px-2 py-0.5 text-[7px]" style="color:rgba(26,18,8,0.28);">TH</span>
+            </div>
           </div>
-          <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/70 to-transparent">
+          <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/60 to-transparent">
             <span class="text-cream text-sm font-semibold">
               <span class="lang-en">View example ↗</span>
               <span class="lang-fr">Voir l'exemple ↗</span>
@@ -396,19 +475,60 @@ const packageFeatures = [
         </div>
       </a>
 
+      <!-- MOCKUP 3 — Modern dark with bento grid -->
       <a href="https://food.arkadya.tech" target="_blank" rel="noopener noreferrer"
          class="reveal reveal-d2 group block p-[6px] rounded-[2rem] bg-white/[0.025] ring-1 ring-white/[0.07] hover:ring-amber/30 transition-all duration-300">
-        <div class="rounded-[calc(2rem-6px)] overflow-hidden bg-card relative aspect-[4/5]">
-          <img src="/examples/resto-3.jpg" alt="Restaurant example 3"
-               class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="hidden w-full h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-amber/10 to-orange-950/40">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4884A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
-            </svg>
-            <span class="text-amber/60 text-xs uppercase tracking-widest">Example Restaurant</span>
+        <div class="rounded-[calc(2rem-6px)] overflow-hidden relative aspect-[4/5]">
+          <div class="absolute inset-0 flex flex-col transition-transform duration-500 group-hover:scale-[1.03]" style="background:#0d1117;">
+            <!-- nav with lang switcher -->
+            <div class="flex items-center justify-between px-3.5 py-2.5" style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <span class="text-[9.5px] font-semibold" style="color:rgba(255,255,255,0.8);">Neon Kitchen</span>
+              <div class="flex items-center gap-0.5 p-0.5 rounded-full" style="background:rgba(255,255,255,0.06);">
+                <span class="px-2 py-0.5 rounded-full text-[6.5px] font-bold" style="background:#D4884A;color:#0d1117;">EN</span>
+                <span class="px-2 py-0.5 text-[6.5px]" style="color:rgba(255,255,255,0.28);">FR</span>
+                <span class="px-2 py-0.5 text-[6.5px]" style="color:rgba(255,255,255,0.28);">TH</span>
+              </div>
+            </div>
+            <!-- status pill -->
+            <div class="px-4 pt-4">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full" style="border:1px solid rgba(212,136,74,0.22);background:rgba(212,136,74,0.07);">
+                <div class="w-1 h-1 rounded-full" style="background:#D4884A;"></div>
+                <span class="text-[7px] uppercase tracking-widest" style="color:#D4884A;">Bangkok · Open Now</span>
+              </div>
+            </div>
+            <!-- hero -->
+            <div class="flex-1 px-4 pt-3 pb-3">
+              <div class="font-semibold leading-[1.1] mb-2 text-white" style="font-size:20px;">Modern<br/>Asian Fusion</div>
+              <div class="text-[8px] mb-4" style="color:rgba(255,255,255,0.28);">Book directly · No platform fees</div>
+              <div class="flex gap-1.5">
+                <div class="flex-1 py-1.5 rounded-full text-center text-[8px] font-bold" style="background:#D4884A;color:#0d1117;">Reserve</div>
+                <div class="flex-1 py-1.5 rounded-full text-center text-[8px]" style="border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.35);">Menu</div>
+              </div>
+            </div>
+            <!-- bento grid -->
+            <div class="px-3 pb-3">
+              <div class="grid grid-cols-2 gap-1.5">
+                <div class="col-span-2 px-3 py-2 rounded-xl flex items-center justify-between" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.05);">
+                  <span class="text-[8px]" style="color:rgba(255,255,255,0.55);">Table Booking</span>
+                  <span class="text-[7px]" style="color:rgba(212,136,74,0.65);">via WhatsApp</span>
+                </div>
+                <div class="px-2.5 py-2 rounded-xl" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.05);">
+                  <div class="text-[7.5px] mb-0.5" style="color:rgba(212,136,74,0.75);">Digital Menu</div>
+                  <div class="text-[6.5px]" style="color:rgba(255,255,255,0.25);">EN · FR · TH</div>
+                </div>
+                <div class="px-2.5 py-2 rounded-xl" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.05);">
+                  <div class="text-[7.5px] mb-0.5" style="color:rgba(212,136,74,0.75);">Google Maps</div>
+                  <div class="text-[6.5px]" style="color:rgba(255,255,255,0.25);">SEO ready</div>
+                </div>
+              </div>
+            </div>
+            <!-- bottom bar -->
+            <div class="px-4 py-2.5 flex justify-between items-center" style="border-top:1px solid rgba(255,255,255,0.05);">
+              <span class="text-[7px]" style="color:rgba(255,255,255,0.18);">Live in 2 days</span>
+              <span class="text-[9px] font-bold" style="color:#D4884A;">3,900 THB</span>
+            </div>
           </div>
-          <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/70 to-transparent">
+          <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/75 to-transparent">
             <span class="text-cream text-sm font-semibold">
               <span class="lang-en">View example ↗</span>
               <span class="lang-fr">Voir l'exemple ↗</span>
