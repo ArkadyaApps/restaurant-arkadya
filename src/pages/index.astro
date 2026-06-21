@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const whatsappBase         = "https://wa.me/66886875964";
+const lineUrl              = "https://line.me/ti/p/mLPxAMJQ95";
 const whatsappGeneral      = `${whatsappBase}?text=Hello%2C+I%27m+interested+in+a+restaurant+website+with+Resto+by+Arkadya.`;
 const whatsappPackage      = `${whatsappBase}?text=Hello%2C+I%27d+like+the+3%2C900+THB+restaurant+website.`;
 const whatsappAudit        = `${whatsappBase}?text=Hello%2C+I%27d+like+a+free+audit+of+my+restaurant%27s+digital+presence.`;
@@ -517,7 +518,7 @@ const packageFeatures = [
             <span class="lang-th">หยุดแบ่งปันข้อมูลแขกกับแอปส่งอาหาร เป็นเจ้าของการจอง เมนู และความสัมพันธ์กับแขกทุกคนของคุณ</span>
           </p>
 
-          <div class="pt-2">
+          <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a href={whatsappGeneral}
                class="group inline-flex items-center gap-3 px-8 py-4 rounded-full
                       bg-amber text-ember font-semibold text-base
@@ -530,6 +531,21 @@ const packageFeatures = [
               <span class="lang-en">Chat on WhatsApp</span>
               <span class="lang-fr">Discuter sur WhatsApp</span>
               <span class="lang-th">แชทบน WhatsApp</span>
+            </a>
+            <a href={lineUrl}
+               target="_blank" rel="noopener"
+               class="group inline-flex items-center gap-3 px-8 py-4 rounded-full
+                      text-white font-semibold text-base
+                      transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
+                      active:scale-[0.97]
+                      shadow-[0_10px_36px_rgba(6,199,85,0.25)]"
+               style="background:#06C755;">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" class="shrink-0">
+                <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.819 4.269 8.845 10.036 9.608.391.084.922.258 1.057.59.121.303.079.771.038 1.087l-.164 1.026c-.05.303-.242 1.187 1.049.647 1.291-.541 6.916-4.079 9.436-6.975C23.176 14.393 24 12.458 24 10.304"/>
+              </svg>
+              <span class="lang-en">Line: Thai Onlinesolutions</span>
+              <span class="lang-fr">Line: Thai Onlinesolutions</span>
+              <span class="lang-th">Line: Thai Onlinesolutions</span>
             </a>
           </div>
 
