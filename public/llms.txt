@@ -1,0 +1,13 @@
+# Resto by Arkadya
+> Restaurant websites for restaurants in Thailand, by Arkadya (Thai Online Solutions Co., Ltd.). 3,900 THB one-time. A standard site can go live in as little as 2 days once we have the menu, opening hours and photos; extra features or integrations can take longer.
+
+## Key facts
+- Price: 3,900 THB, paid once (the site shows a regular price of 6,000 THB).
+- The package lists: a custom restaurant website, English / French / Thai versions, table booking with WhatsApp confirmation, a digital menu (photos or items), Google Maps and local SEO basics, mobile-first design, 0% commission on direct bookings.
+- After launch, price, dish and opening-hour changes are handled through WhatsApp.
+- Free audit of your current digital presence, and a free preview at https://food.arkadya.tech
+- Contact: WhatsApp +66 88 687 5964, Line "Thai Onlinesolutions", hello@arkadya.tech
+
+## Pages
+- [Home](https://restaurant.arkadya.tech/): what is included, how it works, price
+- [Arkadya group](https://arkadya.tech/): all Arkadya products and services

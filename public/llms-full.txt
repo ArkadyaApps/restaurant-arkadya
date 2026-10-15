@@ -1,0 +1,30 @@
+# Resto by Arkadya: full reference
+Updated 2026-10-15. Canonical site: https://restaurant.arkadya.tech/
+
+## What it is
+Resto builds websites for restaurants in Thailand. The goal is that guests find the restaurant on Google, read the menu and book a table directly, without a delivery platform in between. Resto is a product of Arkadya (Thai Online Solutions Co., Ltd., Khanom, Nakhon Si Thammarat).
+
+## Price
+3,900 THB, paid once. The site also shows a regular price of 6,000 THB.
+
+## What the package lists
+- Custom restaurant website
+- English, French and Thai versions
+- Table booking with WhatsApp confirmation
+- Digital menu (photos or written items)
+- Google Maps and local SEO basics (structured data, meta tags)
+- Mobile-first responsive design
+- 0% commission on direct bookings
+
+Features or integrations beyond this list are not part of the 3,900 THB package; ask for a quote.
+
+## How it works
+1. You send the menu, opening hours, address and a few photos.
+2. We build and launch the site. A standard site can be live in as little as 2 days once the material is complete; extra features or integrations can take longer.
+3. Later changes (prices, a new dish, opening hours) are requested through WhatsApp.
+
+## Who it is for
+Restaurants, cafes and eateries in Thailand that want their own website alongside delivery apps and social media, in English, French and Thai.
+
+## Contact
+WhatsApp +66 88 687 5964, Line "Thai Onlinesolutions", hello@arkadya.tech. Free audit of your current digital presence on request.

@@ -8,8 +8,44 @@ interface Props {
 
 const {
   title = "Resto by Arkadya — Restaurant Websites for Thailand",
-  description = "Stop losing guests to food apps. A beautiful multilingual restaurant website with booking, digital menu, and WhatsApp — launched in 10 days. 3,900 THB.",
+  description = "Stop losing guests to food apps. A multilingual restaurant website with table booking, digital menu and WhatsApp, live in as little as 2 days. 3,900 THB one-time.",
 } = Astro.props;
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Resto by Arkadya",
+    "url": "https://restaurant.arkadya.tech/",
+    "inLanguage": [
+      "en",
+      "fr",
+      "th"
+    ],
+    "publisher": {
+      "@id": "https://arkadya.tech/#organization"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Restaurant website",
+    "serviceType": "Restaurant website design and launch",
+    "description": "A multilingual (English, French, Thai) restaurant website with table booking, digital menu, WhatsApp and local SEO basics. A standard site can be live in as little as 2 days once the material is complete.",
+    "provider": {
+      "@id": "https://arkadya.tech/#organization"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Thailand"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "3900",
+      "priceCurrency": "THB",
+      "url": "https://restaurant.arkadya.tech/#pricing"
+    }
+  }
+];
 ---
 
 <!DOCTYPE html>
@@ -22,6 +58,11 @@ const {
   <meta property="og:description" content={description} />
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://restaurant.arkadya.tech" />
+  <meta property="og:image"       content="https://restaurant.arkadya.tech/examples/resto-1.jpg" />
+  <meta property="og:image:width" content="1243" />
+  <meta property="og:image:height" content="1164" />
+  <meta property="og:image:alt"   content="Example restaurant website built by Resto by Arkadya" />
+  <meta name="twitter:image"      content="https://restaurant.arkadya.tech/examples/resto-1.jpg" />
   <meta name="twitter:card"       content="summary_large_image" />
   <link rel="icon"      href="/favicon.svg" type="image/svg+xml" />
   <link rel="canonical" href="https://restaurant.arkadya.tech" />
@@ -33,6 +74,7 @@ const {
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </head>
 <body>
   <slot />
